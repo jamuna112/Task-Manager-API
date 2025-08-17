@@ -22,10 +22,10 @@ public class TaskController {
 
     //Create a task
     @PostMapping
-    public ResponseEntity<Tasks> createTask(@RequestParam String title, @RequestParam String description) {
+    public ResponseEntity<Tasks> createTask(@RequestBody Tasks task) {
 
-        Tasks task = taskService.createTask(title, description);
-        return new ResponseEntity<>(task, HttpStatus.CREATED);
+        Tasks createdTask = taskService.createTask(task);
+        return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
     //Get all tasks
@@ -43,7 +43,7 @@ public class TaskController {
        if (task == null) {
            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
        }
-       return new ResponseEntity<>(HttpStatus.OK);
+       return new ResponseEntity<>(task, HttpStatus.OK);
     }
 
     //Mark as task DONE
@@ -54,7 +54,7 @@ public class TaskController {
       if (task == null) {
           return new ResponseEntity<>(HttpStatus.NOT_FOUND);
       }
-      return new ResponseEntity<>(HttpStatus.OK);
+      return new ResponseEntity<>(task, HttpStatus.OK);
     }
 
     //Delete a task

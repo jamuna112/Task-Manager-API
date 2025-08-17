@@ -1,7 +1,6 @@
 package simple.tasks.model;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -55,6 +54,7 @@ public class Tasks {
         return title;
     }
 
+
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
@@ -73,10 +73,6 @@ public class Tasks {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public enum TaskStatus {

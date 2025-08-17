@@ -23,8 +23,7 @@ public class TaskService {
     }
 
     //create a task
-    public Tasks createTask(String title, String description) {
-        Tasks task = new Tasks(title, description);
+    public Tasks createTask(Tasks task) {
         return taskRepository.save(task);
     }
 
