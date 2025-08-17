@@ -34,36 +34,49 @@ public class Tasks {
         this.createdAt = createdAt;
     }
 
-    public String getTitle() {
-        return title;
+    public Tasks(String description, String title) {
+        this.description = description;
+        this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public TaskStatus getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public Long getId() {
+        return id;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getTitle() {
+        return title;
     }
 
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
 
+    public TaskStatus getStatus() {
+        return status;
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public enum TaskStatus {
